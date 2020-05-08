@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import TrackPlayer from 'react-native-track-player';
+import OfflineNotice from "./components/OfflineNotice";
 
 const IMAGE_PLACEHOLDER = require("./assets/placeholder.jpg");
 const STREAM_ENDPOINT = 'https://stream.fear.fm';
@@ -24,14 +25,13 @@ export default class App extends React.Component {
       artist: 'Fear.FM',
       title: 'Be Proud and Listen Loud'
     }
-    this.player = null;
   }
 
   componentDidMount() {
     const { artist, title } = this.state;
 
     TrackPlayer.setupPlayer({
-      stopWithApp: false,
+      stopWithApp: true,
       volume: 1
     }).then(() => {
       var track = {
@@ -66,6 +66,7 @@ export default class App extends React.Component {
     const { artist, title, isPlaying } = this.state;
     return (
       <SafeAreaView style={styles.container}>
+        <OfflineNotice />
         <View style={{ alignItems: "center" }}>
           <View style={styles.coverContainer}>
             <Image source={IMAGE_PLACEHOLDER} style={styles.cover}></Image>

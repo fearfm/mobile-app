@@ -6,6 +6,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^5.8.0",
     "expo": "~37.0.3",
     "expo-updates": "~0.1.0",
     "react": "~16.9.0",
