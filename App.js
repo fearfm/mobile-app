@@ -11,7 +11,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import TrackPlayer from 'react-native-track-player';
 
 const IMAGE_PLACEHOLDER = require("./assets/placeholder.jpg");
-// const AUDIO_STREAM_URI = 'https://stream.pimjansen.dev';
+const STREAM_ENDPOINT = 'https://stream.fear.fm';
 
 export default class App extends React.Component {
 
@@ -36,7 +36,7 @@ export default class App extends React.Component {
     }).then(() => {
       var track = {
         id: 'fearfm-stream', // Must be a string, required
-        url: 'https://stream.fear.fm', // Load media from the network
+        url: STREAM_ENDPOINT, // Load media from the network
         title,
         artist,
         artwork: IMAGE_PLACEHOLDER, // Load artwork from the network
